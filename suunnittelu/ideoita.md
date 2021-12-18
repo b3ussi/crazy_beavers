@@ -1,0 +1,4 @@
+- Pelin tavoitteena edetä tasolta toiselle
+- Beaver Clan koostuu majavista, jotka taistelevat majavamiestä vastaan
+- Majavien kanssa samalla puolella on Jooseppi, joka on luonnosuojelia sekä velho
+- Majavat aloittavat matkansa aina aloituspisteestä → Kun majavat ovat lähteneet liikeelle, niiden perään lähtee majava-mies, joka jahtaa majavia tason loppuun saakka. Jos tasoa ei suorita tarpeeksi nopeassa ajassa, majava-mies saa majavan kiinni ja tason häviää. Tason aikana vastaan tulee erilaisia esteitä eli majavan pitää osata hypätä, ryömiä, liikkua eteenpäin ja taakseppäin sekä jyrsiä vastaan tulevia puita
