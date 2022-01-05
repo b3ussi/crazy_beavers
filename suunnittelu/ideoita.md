@@ -65,5 +65,9 @@ Kaikki sellaiset asiat jotka vaikuttavat hahmojen liikkumiseen, mutta jotka eiv�
 
 
 
+##Tulevaisuutta varten:
+Hahmo-luokat
+1. Majavat. Toiminnallisuus oikeaksi. Majava-luokka saadaan näyttämään miltä halutaan (ei vielä välttämättä visuaalisesti)
+
 
 
