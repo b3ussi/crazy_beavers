@@ -9,8 +9,11 @@ class Kivi(Palikka):
     def __init__(self, paikka, koko):
         super().__init__(paikka, koko)
         self.image = pygame.image.load('./kuvat/palikat/kivi.png').convert_alpha()
+        self.image = pygame.transform.scale(self.image, (koko, koko))
         self.rect = self.image.get_rect(topleft = paikka)
 
+    def osuma(self):
+        pass
         
 class Suo(Palikka):
     symboli = 'S'
@@ -20,14 +23,18 @@ class Suo(Palikka):
         self.image.fill((0, 255, 0))
         self.rect = self.image.get_rect(topleft = paikka)
 
+    def osuma(self):
+        print("vajoat!")
         
 class Vesi(Palikka):
     symboli = 'V'
     def __init__(self, paikka, koko):
         super().__init__(paikka, koko)
         self.image = pygame.image.load('./kuvat/palikat/vesi.png').convert_alpha()
+        self.image = pygame.transform.scale(self.image, (koko, koko))
         self.rect = self.image.get_rect(topleft = paikka)
-
+    def osuma(self):
+        print("ui majava ui!")
         
 rekisteroi_palikka(Kivi)
 rekisteroi_palikka(Suo)

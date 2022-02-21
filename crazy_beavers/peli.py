@@ -6,7 +6,6 @@ import sys
 pygame.init()
 
 kello = pygame.time.Clock()
-
 kartta = Kartta('./tasot/taso1.txt')
 screen = pygame.display.set_mode((kartta.pituus, kartta.korkeus))
 taso = Taso(kartta.data, screen)
@@ -17,8 +16,11 @@ while True:
             pygame.quit()
             sys.exit()
 
-    screen.fill((0, 0, 0))
+    #nappaimet = pygame.key.get_pressed()
+    #if nappaimet[pygame.K_w]:
+    #    print("W laulaa")
+    screen.fill((200, 250, 60))
     taso.update()
-    
+
     pygame.display.update()
     kello.tick(60)
