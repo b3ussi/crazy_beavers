@@ -59,6 +59,7 @@ class Taso:
                     # print(f"lisätty {type(palikka)}")
 
     def testaa_tormaykset(self):
+        pass
 
 
     def update(self):

@@ -11,7 +11,7 @@ class Majava(Palikka):
         self.rect = self.image.get_rect(topleft=paikka)
         self.liike = pygame.math.Vector2(0, 0)
         self.painovoima = 1.0
-        self.hyppy_nopeus = 16
+        self.hyppy_nopeus = 9
 
     def lue_nappaimet(self):
         nappaimet = pygame.key.get_pressed()
