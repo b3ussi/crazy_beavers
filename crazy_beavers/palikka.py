@@ -32,10 +32,8 @@ class Ametysti(Palikka):
         self.image = pygame.transform.scale(self.image, (koko, koko))
         self.rect = self.image.get_rect(topleft=paikka)
 
-
-
     def osuma(self):
-        print("vajoat!")
+        pass
         
 class Vesi(Palikka):
     symboli = 'V'

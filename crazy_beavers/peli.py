@@ -6,18 +6,14 @@ import sys
 from pelaaja import*
 
 
-
-
-
-
-
 pygame.init()
 
 kello = pygame.time.Clock()
 kartta = Kartta('./tasot/taso1.txt')
 screen = pygame.display.set_mode((400,300), pygame.RESIZABLE)
-taso = Taso(kartta.data, screen)
 bg = pygame.image.load("./kuvat/taustat/bg1.png").convert()
+taso = Taso(kartta.data, screen, bg)
+
 
 # majava = Majava(12,12)
 # player = majava
@@ -29,7 +25,8 @@ bg = pygame.image.load("./kuvat/taustat/bg1.png").convert()
 
 
 while True:
-    screen.blit(bg, (0, 0))
+    # screen.blit((0,0,0), (0, 0))
+    # screen.fill((0,0,0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -39,7 +36,7 @@ while True:
     # if nappaimet[pygame.K_w]:
     #    print("W laulaa")
 
-    screen.blit(bg, (0, 0))
+    # screen.blit(bg, (0, 0))
 
     taso.update()
 

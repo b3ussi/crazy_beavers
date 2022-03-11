@@ -14,3 +14,6 @@ class Palikka(pygame.sprite.Sprite):
 
     def osuma(self):
         pass
+    
+    def update(self, muutos_x):
+        self.rect.x += muutos_x

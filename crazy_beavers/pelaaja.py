@@ -12,13 +12,16 @@ class Majava(Palikka):
         self.liike = pygame.math.Vector2(0, 0)
         self.painovoima = 1.0
         self.hyppy_nopeus = 9
+        self.suunta = 1
 
     def lue_nappaimet(self):
         nappaimet = pygame.key.get_pressed()
         if nappaimet[pygame.K_a]:
             self.liike.x = -1
+            self.suunta = -1
         elif nappaimet[pygame.K_d]:
             self.liike.x = 1
+            self.suunta = 1
         else:
             self.liike.x = 0
 
@@ -36,8 +39,8 @@ class Majava(Palikka):
         self.lue_nappaimet()
         self.rect.x += self.liike.x
         #self.painovoimaa()
-
-
+        # print(self.rect.centerx)
+        
 
 
 

@@ -1,3 +1,4 @@
+from tausta import Tausta
 from palikka import Palikka
 from pelaaja import Majava
 from palikka_rekisteri import hae_palikka
@@ -7,16 +8,23 @@ import pygame
 
 
 class Taso:
-    def __init__(self, taso_data, surface):
+    def __init__(self, taso_data, surface, bg_obj):
         self.taso_data = taso_data
         
         self.pituus = len(self.taso_data[0]) * PALIKAN_KOKO
         self.korkeus = len(self.taso_data) * PALIKAN_KOKO
-        
+        self.tausta_shift = 0
         self.surface = surface
         self.palikat = pygame.sprite.Group()
         self.pelaaja = pygame.sprite.GroupSingle()
+        #self.tausta_olio = Tausta("./kuvat/taustat/bg1.png", 1920, 1080)
+        #self.tausta = pygame.sprite.GroupSingle()
+        #self.tausta.add(self.tausta_olio)
+        self.tausta = bg_obj
+        self.surface.blit(self.tausta, (0, 0))
         self.valmistele()
+        self.tausta_poikkeama = 0
+        
 
     def vaakatormayksen_tarkistus(self):
         pelaaja = self.pelaaja.sprite
@@ -63,8 +71,36 @@ class Taso:
 
 
     def update(self):
+        self.scroll_x()
+        self.surface.blit(self.tausta, (self.tausta_poikkeama, 0))
+        self.palikat.update(self.tausta_shift)
+        # self.tausta.update(self.tausta_shift)
         self.palikat.draw(self.surface)
         self.pelaaja.draw(self.surface)
+        #self.tausta.draw(self.surface)
         self.vaakatormayksen_tarkistus()
         self.pystytormayksen_tarkistus()
         self.pelaaja.update()
+        print(self.tausta_shift)
+        
+        
+    def scroll_x(self):
+        pelaaja = self.pelaaja.sprite
+        paikka_x = pelaaja.rect.centerx
+        suunta = pelaaja.suunta
+        
+        if paikka_x > 400 and suunta > 0:
+            self.tausta_shift = -1
+            pelaaja.rect.centerx = 400
+        elif paikka_x < 200 and suunta < 0:
+            self.tausta_shift = 1
+        else:
+            self.tausta_shift = 0
+        
+        self.tausta_poikkeama += self.tausta_shift
+        
+        #self.surface.blit()
+            
+            
+            
+        
