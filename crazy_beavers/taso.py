@@ -28,7 +28,7 @@ class Taso:
 
     def vaakatormayksen_tarkistus(self):
         pelaaja = self.pelaaja.sprite
-        pelaaja.rect.x += pelaaja.liike.x
+        pelaaja.rect.x += pelaaja.liike.x * 10
 
         for palikka in self.palikat.sprites():
             if palikka.rect.colliderect(pelaaja.rect):
@@ -90,10 +90,10 @@ class Taso:
         suunta = pelaaja.suunta
         
         if paikka_x > 400 and suunta > 0:
-            self.tausta_shift = -1
+            self.tausta_shift = -10
             pelaaja.rect.centerx = 400
-        elif paikka_x < 200 and suunta < 0:
-            self.tausta_shift = 1
+        elif paikka_x < 200 and suunta < 1:
+            self.tausta_shift = 10
         else:
             self.tausta_shift = 0
         
