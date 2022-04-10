@@ -13,6 +13,9 @@ class Majava(Palikka):
         self.painovoima = 1.0
         self.hyppy_nopeus = 9
         self.suunta = 1
+        self.liike_nopeus = 5
+
+
 
     def lue_nappaimet(self):
         nappaimet = pygame.key.get_pressed()
@@ -27,7 +30,7 @@ class Majava(Palikka):
 
         if nappaimet[pygame.K_SPACE]:
             self.hyppy()
-
+        self.liike.x *= self.liike_nopeus
     def painovoimaa(self):
         self.liike.y -= self.painovoima
         self.rect.y -= self.liike.y

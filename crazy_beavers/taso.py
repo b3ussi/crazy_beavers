@@ -1,4 +1,4 @@
-from tausta import Tausta
+#from tausta import Tausta
 from palikka import Palikka
 from pelaaja import Majava
 from palikka_rekisteri import hae_palikka
